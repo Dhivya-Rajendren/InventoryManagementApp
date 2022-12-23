@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="ProductList.aspx.cs" Inherits="InventoryManagementApp.ProductList" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="ProductList.aspx.cs" EnableEventValidation="true" Inherits="InventoryManagementApp.ProductList" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
@@ -9,8 +9,13 @@
     <br />
     <br />
 
-    <asp:GridView ID="gvProducts" runat="server" CssClass="table table-bordered" AutoGenerateColumns="false">
+    <asp:GridView ID="gvProducts" runat="server" CssClass="table table-bordered" AutoGenerateColumns="false" OnRowDeleting="gvProducts_RowDeleting">
   <Columns>
+      <asp:TemplateField HeaderText="ID">
+         <ItemTemplate>
+             <asp:Label ID="lblProductID" Text='<%#Eval("ProductId") %>'  runat="server"/>
+         </ItemTemplate>
+      </asp:TemplateField>
       <asp:TemplateField HeaderText="Name">
          <ItemTemplate>
              <asp:Label ID="lblProductName" Text='<%#Eval("ProductName") %>'  runat="server"/>
@@ -31,7 +36,11 @@
               <asp:Label ID="lblPrice" Text='<%#Eval("SellingPrice") %>' runat="server" />
           </ItemTemplate>
       </asp:TemplateField>
-
+      <asp:TemplateField HeaderText="Action">
+          <ItemTemplate>
+              <asp:Button ID="btnDeleteRow" runat="server" Text="Delete" CssClass="btn btn-danger" CommandName="Delete"/>
+          </ItemTemplate>
+      </asp:TemplateField>
   </Columns>
 
     </asp:GridView>
