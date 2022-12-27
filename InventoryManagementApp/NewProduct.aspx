@@ -8,11 +8,18 @@
      <div class="form-group">
     <asp:Label ID="lblProductName" runat="server" Text="Enter Product Name : " />
     <asp:TextBox ID="txtProductName" CssClass="form-control" runat="server" />
+         <br />
+         <br />
+         <asp:RequiredFieldValidator ID="rfvProductName" runat="server" ControlToValidate="txtProductName" ErrorMessage="Product Name is mandatory " CssClass="bg-danger alert alert-danger" />
          </div>
     
      <div class="form-group">
     <asp:Label ID="lblCategory" runat="server" Text="Enter Category : " />
     <asp:TextBox ID="txtCategory" CssClass="form-control" runat="server" />
+            <br />
+         <br />
+         <asp:RequiredFieldValidator ID="rfvCategory" runat="server" ControlToValidate="txtCategory" ErrorMessage="Category is mandatory " CssClass="bg-danger alert alert-danger" />
+         
   </div>
      <div class="form-group">
     <asp:Label ID="lblCode" runat="server" Text="Enter Product Code : " />
