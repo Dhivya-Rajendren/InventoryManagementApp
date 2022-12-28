@@ -17,9 +17,12 @@ namespace InventoryManagementApp
         {
             if (!IsPostBack)
             {
-                InventoryRepository inventoryRepository = new InventoryRepository();
-                List<Product> products = inventoryRepository.GetProducts();
-                gvProducts.DataSource = products;
+                //   InventoryRepository inventoryRepository = new InventoryRepository();
+                //    List<Product> products = inventoryRepository.GetProducts();
+
+                DBHelper dbHelper = new DBHelper();
+                
+                gvProducts.DataSource = dbHelper.GetAllProducts();
                 gvProducts.DataBind();
             }
 

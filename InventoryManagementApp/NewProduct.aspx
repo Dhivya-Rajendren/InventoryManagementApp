@@ -29,7 +29,12 @@
     <asp:Label ID="lblPrice" runat="server" Text="Enter Product Price : " />
     <asp:TextBox ID="txtPrice" runat="server" CssClass="form-control" />
          </div>
-  
+  <div class="form-group">
+          <asp:Label ID="lblProductImage" runat="server" Text="Select a Product Image " />
+      <asp:FileUpload ID="fuProductImage" runat="server" />
+   
+
+  </div>
         <asp:Button ID="btnCreateProduct" runat="server" Text="Add New " CssClass="btn btn-primary" OnClick="btnCreateProduct_Click" />
 
     </asp:Content>

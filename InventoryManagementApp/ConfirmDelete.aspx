@@ -11,8 +11,8 @@
     </div>
 
     <p > Are you sure to Delete the product From the system 
-        <asp:Button ID="btnYes" CssClass="btn btn-success btn-sm" Text="Yes" runat="server" />
-                <asp:Button ID="btnNo" CssClass="btn btn-danger btn-sm" Text="No" runat="server" />
+        <asp:Button ID="btnYes" CssClass="btn btn-success btn-sm" Text="Yes" runat="server" OnClick="btnYes_Click" />
+                <asp:Button ID="btnNo" CssClass="btn btn-danger btn-sm" Text="No" runat="server" OnClick="btnNo_Click" />
 
     </p>
 </asp:Content>

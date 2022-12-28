@@ -17,15 +17,16 @@ namespace InventoryManagementApp
 
         protected void btnCreateProduct_Click(object sender, EventArgs e)
         {
-            InventoryRepository repo = new InventoryRepository();
+            //   InventoryRepository repo = new InventoryRepository();
+            DBHelper repo = new DBHelper();
             Product product = new Product();
-            product.ProductId = repo.GetProducts().Count+1;
+          
             product.ProductName = txtProductName.Text;
             product.Category = txtCategory.Text;
             product.ProductCode = txtProductCode.Text;
             product.SellingPrice=double.Parse(txtPrice.Text);
-
-            repo.CreateProduct(product);
+            product.ProductImageURL = "images/" + fuProductImage.FileName;
+            repo.AddNewProduct(product);
             Response.Redirect("ProductList.aspx");
         }
     }

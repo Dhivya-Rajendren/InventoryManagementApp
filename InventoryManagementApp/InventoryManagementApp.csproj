@@ -208,6 +208,7 @@
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\DBHelper.cs" />
     <Compile Include="Models\InventoryRepository.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="NewProduct.aspx.cs">
@@ -270,6 +271,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="images\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
