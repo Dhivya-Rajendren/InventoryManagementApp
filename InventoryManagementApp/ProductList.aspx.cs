@@ -35,6 +35,16 @@ namespace InventoryManagementApp
             Response.Redirect("NewProduct.aspx");
         }
 
+        protected void btnSelectRow_Click(object sender,EventArgs e)
+        {
+            Button btn = (Button)sender;
+            GridViewRow row = (GridViewRow)btn.NamingContainer;
+            HiddenField hf = (HiddenField)row.FindControl("hfId");
+            int id = int.Parse(hf.Value);
+            Response.Redirect("ShowProduct.aspx?id=" + id);
+
+
+        }
         protected void gvProducts_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             GridViewRow row = (GridViewRow)gvProducts.Rows[e.RowIndex];

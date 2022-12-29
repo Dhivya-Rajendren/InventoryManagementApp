@@ -41,6 +41,12 @@
               <asp:Button ID="btnDeleteRow" runat="server" Text="Delete" CssClass="btn btn-danger" CommandName="Delete"/>
           </ItemTemplate>
       </asp:TemplateField>
+       <asp:TemplateField HeaderText="Action">
+          <ItemTemplate>
+              <asp:HiddenField ID="hfId" runat="server" Value='<%#Eval("ProductId") %>' />
+              <asp:Button ID="btnSelectRow" runat="server" Text="Details" CssClass="btn btn-primary" OnClick="btnSelectRow_Click"/>
+          </ItemTemplate>
+      </asp:TemplateField>
   </Columns>
 
     </asp:GridView>

@@ -20,6 +20,7 @@ namespace InventoryManagementApp
             //   InventoryRepository repo = new InventoryRepository();
             DBHelper repo = new DBHelper();
             Product product = new Product();
+
           
             product.ProductName = txtProductName.Text;
             product.Category = txtCategory.Text;
@@ -27,6 +28,10 @@ namespace InventoryManagementApp
             product.SellingPrice=double.Parse(txtPrice.Text);
             product.ProductImageURL = "images/" + fuProductImage.FileName;
             repo.AddNewProduct(product);
+            if(fuProductImage.HasFile)
+            {
+                fuProductImage.SaveAs(Server.MapPath("images//" + fuProductImage.FileName));
+            }
             Response.Redirect("ProductList.aspx");
         }
     }
