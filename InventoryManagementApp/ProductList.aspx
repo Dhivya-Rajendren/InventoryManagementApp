@@ -36,6 +36,11 @@
               <asp:Label ID="lblPrice" Text='<%#Eval("SellingPrice") %>' runat="server" />
           </ItemTemplate>
       </asp:TemplateField>
+       <asp:TemplateField HeaderText="Image">
+          <ItemTemplate>
+<asp:Image ID="productImage" ImageUrl='<%#Eval("ProductImageURL") %>' runat="server" Height="50px" Width="100px" />
+          </ItemTemplate>
+      </asp:TemplateField>
       <asp:TemplateField HeaderText="Action">
           <ItemTemplate>
               <asp:Button ID="btnDeleteRow" runat="server" Text="Delete" CssClass="btn btn-danger" CommandName="Delete"/>
